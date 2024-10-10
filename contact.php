@@ -1,13 +1,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get POST data
+
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $age = $_POST['age'];
     $contact = $_POST['contact'];
     $address = $_POST['address'];
 
-    // Validate and process the data
     $errors = array();
     
     if (empty($first_name)) {
@@ -30,7 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Address is required.";
     }
 
-    // Display errors if any
     if (count($errors) > 0) {
         echo "<h3>Error:</h3>";
         echo "<ul>";
@@ -39,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "</ul>";
     } else {
-        // Output the data if no errors
         echo "<h3>Form Submitted Successfully</h3>";
         echo "<p>First Name: $first_name</p>";
         echo "<p>Last Name: $last_name</p>";

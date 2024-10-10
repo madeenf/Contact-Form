@@ -24,7 +24,6 @@
             overflow: hidden;
         }
 
-        /* Left section for the Form */
         .form-section {
             background: linear-gradient(to bottom, #9e64ca, #32124f, #32124f);
             padding: 40px;
@@ -78,7 +77,6 @@
             background-color: #4a2e6f;
         }
 
-        /* Right section for the Output */
         .output-section {
             width: 50%;
             background-color: white;
@@ -105,7 +103,6 @@
 <body>
 
     <div class="wrapper">
-        <!-- Form Section -->
         <div class="form-section">
             <h2>Contact Form</h2>
             <form id="contactForm" action="" method="POST" onsubmit="return handleSubmit()">
@@ -118,7 +115,6 @@
             </form>
         </div>
 
-        <!-- Output Section -->
         <div class="output-section" id="outputCard" style="display: none;">
             <h3>Submitted Data</h3>
             <div class="output-content" id="outputContent"></div>
@@ -129,25 +125,28 @@
         function handleSubmit() {
             const firstName = document.getElementById("first_name").value;
             const lastName = document.getElementById("last_name").value;
-            const age = document.getElementById("age").value;
-            const contact = document.getElementById("contact").value;
-            const address = document.getElementById("address").value;
+            const age1 = document.getElementById("age").value;
+            const contact1 = document.getElementById("contact").value;
+            const address1 = document.getElementById("address").value;
+            first_name.value = "";
+            last_name.value = "";
+            age.value = "";
+            contact.value = "";
+            address.value = "";
 
-            // Display the output card
             const outputCard = document.getElementById("outputCard");
             const outputContent = document.getElementById("outputContent");
 
             outputContent.innerHTML = `
                 <p><strong>First Name:</strong> ${firstName}</p>
                 <p><strong>Last Name:</strong> ${lastName}</p>
-                <p><strong>Age:</strong> ${age}</p>
-                <p><strong>Contact:</strong> ${contact}</p>
-                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Age:</strong> ${age1}</p>
+                <p><strong>Contact:</strong> ${contact1}</p>
+                <p><strong>Address:</strong> ${address1}</p>
             `;
 
             outputCard.style.display = 'block';
 
-            // Prevent page reload
             return false;
         }
     </script>
